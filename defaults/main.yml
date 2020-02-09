@@ -1,0 +1,19 @@
+---
+# defaults file for vmtools
+
+vmtools_packages_state: present
+vmtools_remove_packages: true
+vmtools_enable_service: true
+vmtools_enable_selinux: true
+vmtools_copy_templates: true
+vmtools_firewall_configure: true
+vmtools_firewall_rules:
+  - service: ssh
+  - port: 3389
+vmtools_users:
+  - user: devops
+    group: docker
+vmtools_selinux_booleans:
+  - name: ftp_home_dir
+    state: true
+    persistent: true

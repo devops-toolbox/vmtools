@@ -1,0 +1,27 @@
+---
+# Install vmtools packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ vmtools_packages_remove }}"
+    state: absent
+  become: true
+  when: vmtools_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ vmtools_packages_repos }}"
+    state: "{{ vmtools_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ vmtools_packages_prereq }}"
+    state: "{{ vmtools_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ vmtools_packages_install }}"
+    state: "{{ vmtools_packages_state }}"
+  become: true

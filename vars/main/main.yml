@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+vmtools_repos_create: "{{ _vmtools_repos_create['all']
+  | union ( _vmtools_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+vmtools_repos_download: "{{ _vmtools_repos_download['all']
+  | union ( _vmtools_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+vmtools_templates_copy: "{{ _vmtools_templates_copy['all']
+  | union ( _vmtools_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+vmtools_services_enable: "{{ _vmtools_services_enable['all']
+  | union ( _vmtools_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+vmtools_selinux_enable: "{{ _vmtools_selinux_enable['all']
+  | union ( _vmtools_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+vmtools_packages_remove: "{{ _vmtools_packages_remove['all']
+  | union ( _vmtools_packages_remove[my_os]
+  | default([]) ) }}"
+vmtools_packages_repos: "{{ _vmtools_packages_repos['all']
+  | union ( _vmtools_packages_repos[my_os]
+  | default([]) ) }}"
+vmtools_packages_prereq: "{{ _vmtools_packages_prereq['all']
+  | union ( _vmtools_packages_prereq[my_os]
+  | default([]) ) }}"
+vmtools_packages_install: "{{ _vmtools_packages_install['all']
+  | union ( _vmtools_packages_install[my_os]
+  | default([]) ) }}"
