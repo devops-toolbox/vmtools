@@ -8,10 +8,10 @@ vmtools: Vmtools
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.vmtools](https://galaxy.ansible.com/devops-toolbox.vmtools)
+[https://galaxy.ansible.com/devopstoolbox.vmtools](https://galaxy.ansible.com/devopstoolbox.vmtools)
 
 ```bash
-ansible-galaxy install devops-toolbox.vmtools
+ansible-galaxy install devopstoolbox.vmtools
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: vmtools is configured
       import_role:
-        name: devops-toolbox.vmtools
+        name: devopstoolbox.vmtools
       vars:
         vmtools_packages_state: present
         vmtools_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
